@@ -1,0 +1,22 @@
+ <div>
+	Enter Word :          
+    <input type = "text" ng-model = "name"  ng-change = "changed()"/> {{strHello+' '+name}}        
+ </div>	
+
+ <div>
+ 	<input type="checkbox" ng-model="checked"><br/>
+    <input type="text" ng-readonly="checked" value="I'm readonly"/>
+
+    <img src="img/{{hash2}}"/>
+    <img ng-src="img/{{hash2}}"/>
+ </div>
+
+ <div>
+    <input type="checkbox" ng-model="selected"><br/>
+	<select>
+	  <option>Hi</option>
+	  <option id="greet" ng-selected="selected">Its working!</option>
+	</select>
+ </div>
+
+

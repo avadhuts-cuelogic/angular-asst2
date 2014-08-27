@@ -1,0 +1,93 @@
+<div id = "mainDiv3">
+
+     <form name = 'myForm' ng-submit ="submit()">
+	Enter text:
+	<input type ="text" ng-model ="text1" name="text" />
+
+	<br>
+      <br>
+	<button ng-click ="dispmessage()">
+       Todays Special
+      </button>
+      {{msg}}
+      <br>
+      <br>
+      <button ng-dblclick ="msg2 = 'DoubleClick'">
+       Please Double click
+      </button>
+      {{msg2}}
+      <br>
+      <br>
+      <button ng-mouseover="msg3 = 'This do nothing'">
+       hi
+      </button>
+      {{msg3}}
+       <br>
+       <br>      
+       
+	 <input type = "submit" id="submit" value="Submit" />
+      {{savetext}}	
+   </form>
+ </div>  
+	
+<div class="myclass">
+</div>
+<button disabled="{{isDisabled}}">Disabled</button>
+<br>
+<input type="checkbox" ng-model="open">
+<details id="details" ng-open="open">
+   <summary>Show/Hide me</summary>
+   <summary>Show2</summary>
+   <summary>Show3</summary>
+</details>
+ <br>
+ <br>
+ <p ng-class="{strike: deleted, bold: important}">ngclass Example</p>
+<input type="checkbox" ng-model="deleted"> deleted (apply "strike" class)<br>
+<input type="checkbox" ng-model="important"> important (apply "bold" class)<br>
+<p ng-class="style">Using String Syntax</p>
+<input type="text" ng-model="style" placeholder="Type: yellow strike blue">
+
+<p ng-class="[style1, style2, style3]">Using Array Syntax</p>
+<input ng-model="style1" placeholder="Type: yellow strike blue"><br>
+<input ng-model="style2" placeholder="Type: yellow strike blue"><br>
+<input ng-model="style3" placeholder="Type: yellow strike blue"><br>
+
+<br>
+<br>E.g. ng checked
+<input type="checkbox" ng-model="master"><br/>
+<input id="checkSlave" type="checkbox" ng-checked="master">
+
+<br>
+<br>
+       <form name="userForm">
+          Name:
+          <input type="text" name="userName"
+                 ng-model="user.name"
+                 ng-model-options="{ updateOn: 'blur' }"
+                 ng-keyup="cancel($event)" /><br />
+
+          Other data:
+          <input type="text" ng-model="user.data" /><br />
+       </form>
+
+  <pre>user.name = <span ng-bind="user.name"></span></pre>
+  <br>
+  <input type="text" ng-model="salutation"><br>
+   Name: <input type="text" ng-model="name"><br>
+  <pre ng-bind-template="{{salutation}} {{name}}!"></pre>
+
+  <br>
+  <input ng-model="value" /><br />
+  <a id="link-1" href ng-click="value = 1">link 1</a> (link, don't reload)<br />
+  <a id="link-3" ng-href="/{{'123'}}">link 3</a> (link, reload!)<br />
+  <a id="link-6" ng-href="{{value}}">link</a> (link, change location)
+  <br>
+  <br>
+  <toll>
+      <b>Is this get replaced?</b>
+  </toll>
+
+  <div id="template1" ng-cloak>{{ 'hello cloak' }}</div>
+<!--<div ng-include = "myurl">
+</div> -->	

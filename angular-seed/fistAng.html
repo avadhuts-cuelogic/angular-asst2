@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html data-ng-app="">
+   <head>
+   	  <title>First Angular</title>
+   </head>
+	<body data-ng-init="names=[{name:'Tushar mate',city:'pune'},{name:'Tushar sonawane',city:'mumbai'},{name:'prasanna',city:'mumbai'}]">
+		<div >Name:
+           <input type="text" data-ng-model="name"/>{{ name }}         
+		</div>
+		<div>
+			<ul>
+				<li data-ng-repeat="personArr in names|filter:name|orderBy:'city'">{{personArr.name |uppercase}}-{{personArr.city|lowercase}}</li>
+			</ul>
+		</div>	
+        <script src="app/bower_components/angular/angular.js">
+        </script>
+
+        <script>
+          function SimpleController($scope)
+           {
+           	 $scope.personArr = [{ }]
+           }
+        </script>
+	</body>
+</html>

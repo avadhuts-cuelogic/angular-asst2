@@ -1,0 +1,15 @@
+<div>
+   <button ng-click ="displist()">
+    Clients List
+    </button>
+   <br>
+   <br>
+   <b>Our Clients are:</b>
+   <ul>
+	   <li ng-repeat="client in clientList">
+		   
+           {{client.name |uppercase}}-{{client.info|lowercase}}
+           
+	  </li>
+  </ul>
+</div>

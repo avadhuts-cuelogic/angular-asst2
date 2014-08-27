@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- printMsgapp is module has a control as Firstcontroller -->
+<html data-ng-app = "printMsgapp"> 
+   <head>
+   	  <title>Hello first assignment</title>
+      <link rel="stylesheet" type="text/css" href="helloStyle.css"> 
+   </head>
+	<body>
+    <div id = "mainDiv" data-ng-controller = "FirstController">
+      <!-- Div uses following FirstController , it bounds typed word to hello -->
+  		<div >Enter Word :          
+           <input type = "text" data-ng-model = "name"/> {{strHello+' '+name}}        
+  	  </div>	
+       
+    </div>
+    <script src = "app/bower_components/angular/angular.js">
+    </script>
+
+    <script src = "helloScript.js">             
+    </script>
+	</body>
+</html>

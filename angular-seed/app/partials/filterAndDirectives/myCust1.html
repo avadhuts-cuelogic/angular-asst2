@@ -1,0 +1,170 @@
+	<div >
+        
+		Name:
+           <input type="text"  ng-model="name" />
+         
+           {{name}}
+            
+	</div>
+
+	<div>
+		<ul>
+			<li data-ng-repeat="personArr in names|filter:name|orderBy:'city'">
+				<span ng-class-odd="'odd'" ng-class-even="'even'">
+                {{personArr.name |uppercase}}-{{personArr.city|lowercase}}
+                </span>
+			</li>
+		</ul>
+		<div>
+			<hr>
+			<form name="myForm"> 
+           <input name="namesInput" ng-model="names2" ng-list required>
+           <span class="error" ng-show="myForm.namesInput.$error.required">
+            Required correct!</span>
+              <br>
+              <tt>names2 = {{names2}}</tt><br/>
+			  <tt>myForm.namesInput.$valid = {{myForm.namesInput.$valid}}</tt><br/>
+			  <tt>myForm.namesInput.$error = {{myForm.namesInput.$error}}</tt><br/>
+			  <tt>myForm.$valid = {{myForm.$valid}}</tt><br/>
+			  <tt>myForm.$error.required = {{!!myForm.$error.required}}</tt><br/>
+			</form>
+		</div>
+		 <br>
+		 <br>
+		 <hr>
+		<textarea ng-minlength="3" ng-maxlength="5"></textarea>
+		<br>
+		<label ng-repeat="name in names" for="{{name}}">
+       {{name.name}}     
+       <input type="radio"
+              ng-model="my.favorite"
+              ng-value="name"
+              id="{{name}}"
+              name="favorite">
+     </label>
+     <hr>
+     <div>You chose {{my.favorite}}</div>
+		<first1> </first1>
+		<div newdirt></div>
+	 <!--directive:commdir  -->
+	</div>	
+    <hr>
+	<br>
+	<div ng-controller="SetCon1 as set1">This is controller e.g.
+        <input type="text" ng-model="set1.msg"/> {{set1.msg}}	
+	</div>
+    <br>
+    <hr>
+    <button ng-mousedown="count = count + 1" ng-init="count=0">
+    Increment (on mouse down)
+    </button>
+    {{count}}  
+    <br>
+    <button ng-mouseup ="countVal()">
+    dispaly (on mouse up)
+    </button>
+     val: {{val}} 
+
+    <button ng-mouseenter="disp()" ng-mouseleave="disp2()">
+	 show
+	</button> {{msg1}}
+     <br>
+	<button ng-mousemove="disp()">
+    (when mouse moves)
+    </button>
+     <br>
+     <hr>
+    <input ng-keydown="count1 = count1 * 2" ng-init="count1=1">
+     key down count: {{count1}}
+     <br>
+     <input ng-keyup="count = count + 1" ng-init="count=0">
+     key up count: {{count}}
+     <br>
+     <input ng-keypress="disp()" ng-init="count=0">
+     key press count: hi {{msg1}}
+     <hr>
+     <input ng-copy="copied=true" ng-init="copied=false; value='why dont you copy me'" ng-model="value">
+     copied: {{copied}}
+     <br>
+     <input ng-paste="paste='you paste now' " ng-init="paste=false" placeholder='paste something here'>
+     msg: {{paste}}
+	 <br>
+	 <br>
+	 <hr>
+	<input type="checkbox" ng-model="checked" ng-init="checked=true" />
+	Unchecked me please :
+	<span ng-if="checked">
+	  <h1>THis portion will be removed </h1>
+	</span>
+	<hr>
+	<div ng-non-bindable>Ignored: {{1 + 2}}</div>
+   <br>
+   <br>
+	Click me: <input type="checkbox" ng-model="checkedf"><br/>
+
+	<div ng-show="checkedf">
+        Hello 
+	</div>
+
+	<div ng-hide="checkedf">
+		Hi
+	</div>
+     <hr>
+	<input type="button" value="set background" ng-click="myStyle={'background-color':'blue' ,'color':'red'}">
+	<span ng-style="myStyle">Avadhut</span>
+     <br>
+     <hr>
+    <select ng-model="selection" ng-options="item for item in items">
+    </select>
+    <div   ng-switch on="selection">
+      <div ng-switch-when="A">A Div</div>
+      <div ng-switch-when="B">B Div</div>
+      <div ng-switch-default>default</div>
+   </div>
+    <hr>
+   <br>
+   <select ng-model="myColor" ng-options="color.name for color in colors">
+   </select>
+   <br>
+   <select ng-model="myColor" ng-options="color.name for color in colors">
+     <option value="">-- choose color --</option>
+   </select>
+   <br>
+
+   <script type="text/ng-template" id="/tpl.html">
+  Content of the template.This will be added..
+  </script>
+
+  <a ng-click="currentTpl='/tpl.html'" >Load inlined template</a>
+  <div ng-include src="currentTpl"></div>
+  <hr> 
+  <br>
+  <input type="number" ng-model="amount"> <br>
+  {{ amount | currency}}
+  <br>
+  custom: {{ amount | currency :"$Rup"}}
+  <hr>
+  <br>
+  Date:
+  {{'1188323623006' | date:"MM/dd/yyyy 'at' h:mma"}}
+   <br>
+  {{'1188323623006' | date:"MMMM/dd/yy 'at' hh"}}
+  <br>
+   {{'1188323623006' | date:"MMM/dd/y 'at' hh"}}
+  <br>
+  <hr>
+  <pre>{{ {'name':'value'} | json }}</pre>
+  <pre>{{ {'name':'value' ,'address':'val2'}| json }}</pre>
+   <hr>
+Limit {{numbers}} to: <input type="integer" ng-model="numLimit">
+  <p>Output numbers: {{ numbers | limitTo:numLimit }}</p>
+  <hr>
+  <br>
+ <input type="number" ng-model="valNum"> <br>
+  {{valNum | number}}
+   <br>
+  {{valNum | number:2}}
+   <br>
+  {{valNum | number:4}}
+   <br>
+  <hr>

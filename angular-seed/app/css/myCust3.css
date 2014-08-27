@@ -1,0 +1,21 @@
+#mainDiv3{
+   border: solid;	
+   padding: 10px;
+   margin-left: 200px;
+   margin-top: 20px;  
+   width: 400px;  
+}
+
+.strike{  
+   color:red;    
+   text-decoration: line-through;	
+}
+
+.yellow{  
+   color:yellow;    	
+   text-decoration: line-through;
+}
+
+.blue{
+   color:blue;
+}
